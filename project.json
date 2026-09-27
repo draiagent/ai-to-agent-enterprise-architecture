@@ -1,0 +1,21 @@
+{
+  "name": "ai-to-agent-enterprise-architecture",
+  "version": "1.0.0",
+  "date": "2026-09-27",
+  "status": "methodology-baseline-unvalidated",
+  "author_signature": "AI Coach 益力康陳董 x CGM Coach 血糖教練 | 2026 AI to Agent",
+  "license": "reserved",
+  "description": "以 VAD/VAC 定義任務，由 LLM/Agent 主導，結合知識、工具、全程治理與任務總成本的企業方法論。",
+  "topics": [
+    "ai-to-agent",
+    "agent",
+    "methodology",
+    "knowledge-management",
+    "vad",
+    "vac",
+    "task-cost",
+    "traditional-chinese"
+  ],
+  "visibility": "not-selected",
+  "about_url": null
+}

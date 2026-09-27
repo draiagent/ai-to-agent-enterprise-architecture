@@ -1,0 +1,71 @@
+{
+  "task_id": "demo-meeting-001",
+  "goal": "將已授權會議逐字稿轉為可追溯待辦草稿",
+  "inputs": [
+    {
+      "name": "meeting-transcript",
+      "source": "使用者提供之會議逐字稿",
+      "required": true
+    }
+  ],
+  "context": {
+    "meeting_date": null,
+    "project": null,
+    "knowledge_sources": []
+  },
+  "constraints": {
+    "no_fabrication": true,
+    "missing_owner_or_due_date": "標記待確認",
+    "allowed_actions": [
+      "read-authorized-input",
+      "draft"
+    ],
+    "external_write_requires_approval": true
+  },
+  "actions": [
+    "擷取決議及原文位置",
+    "列出待辦與缺漏",
+    "對照原文驗收"
+  ],
+  "output": {
+    "format": "markdown-table",
+    "columns": [
+      "待辦",
+      "負責人",
+      "期限",
+      "原文位置",
+      "狀態"
+    ]
+  },
+  "evaluation": [
+    {
+      "criterion": "每筆待辦有原文位置",
+      "required": true
+    },
+    {
+      "criterion": "未提及的負責人及期限均標示待確認",
+      "required": true
+    },
+    {
+      "criterion": "未執行未授權外部寫入",
+      "required": true
+    }
+  ],
+  "budget": {
+    "currency": "TWD",
+    "max_total_cost": null,
+    "max_total_tokens": null,
+    "max_minutes": null,
+    "max_retries": 2
+  },
+  "stop_conditions": [
+    "無讀取權限",
+    "超出已設定預算或期限",
+    "兩次重試仍不符合必要驗收"
+  ],
+  "escalation": "回報缺口，請任務負責人決定",
+  "knowledge_writeback": {
+    "automatic": false,
+    "requires_source_and_status": true
+  }
+}

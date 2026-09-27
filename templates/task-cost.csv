@@ -1,0 +1,1 @@
+task_id,currency,attempt_count,input_tokens,output_tokens,model_cost,retrieval_cost,tool_api_cost,own_compute_cost,human_cost,time_cost,total_cost,elapsed_seconds,passed,evidence_path,notes
